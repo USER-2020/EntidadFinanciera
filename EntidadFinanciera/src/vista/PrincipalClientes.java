@@ -23,15 +23,11 @@ public class PrincipalClientes {
     public void leerDatosCliente()
     {
         //Ejercicio deben insertar datos en el arreglo.
-        Scanner capturadatos = new Scanner (System.in);
-        System.out.println("Nombre usuario: - ");
-        String nombre = capturadatos.next();
-        System.out.println("Apellido usuario: - ");
-        String apellido = capturadatos.next();
-        System.out.println("Direccion: - ");
-        String direccion = capturadatos.next();
+        String datosUsuarios[] = {"Juan", "Zulauaga", "Cra.14 # 47 F 35", "3057149417","juanfernandozuluaga2014310@gmail.com","1053863921"};
+        System.out.println("Los datos son"+datosUsuarios);
         
     }
+    
     
     public void menu()
     {
