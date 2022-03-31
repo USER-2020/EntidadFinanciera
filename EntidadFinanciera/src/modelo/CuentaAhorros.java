@@ -7,8 +7,7 @@ package modelo;
 
 /**
  *
- * @author Juan Fernando
- *         Zulauaga Aguirre
+ * @author unalman
  */
 public class CuentaAhorros {
     private String idCuentaAhorros;

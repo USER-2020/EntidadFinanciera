@@ -7,8 +7,7 @@ package modelo;
 
 /**
  *
- * @author Juan Fernando
- *         Zuluaga Aguirre
+ * @author unalman
  */
 public class Cliente extends Usuario {
     private CuentaAhorros cuentaAho;

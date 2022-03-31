@@ -10,8 +10,7 @@ import modelo.Cliente;
 
 /**
  *
- * @author Juan Fernando 
- *         Zuluaga Aguirre
+ * @author unalman
  */
 public class ControladorClientes implements CRUD{
     public static ArrayList<Cliente> arregloClientes;

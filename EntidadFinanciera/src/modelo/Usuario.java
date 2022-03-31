@@ -7,9 +7,7 @@ package modelo;
 
 /**
  *
- * @author Juan Fernando 
- *         Zuluaga Aguirre
- * 
+ * @author unalman
  */
 public class Usuario {
     protected String nombre;
