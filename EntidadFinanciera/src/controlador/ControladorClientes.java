@@ -7,6 +7,7 @@ package controlador;
 
 import java.util.ArrayList;
 import modelo.Cliente;
+import vista.PrincipalClientes;
 
 /**
  *
@@ -15,8 +16,11 @@ import modelo.Cliente;
 public class ControladorClientes implements CRUD{
     public static ArrayList<Cliente> arregloClientes;
 
+  
+
     public ControladorClientes() {
         arregloClientes = new ArrayList<Cliente>();
+        
     }
     
     
@@ -54,4 +58,8 @@ public class ControladorClientes implements CRUD{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-}
+     
+    
+    }
+ 
+
