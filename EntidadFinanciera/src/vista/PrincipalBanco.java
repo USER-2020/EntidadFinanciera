@@ -10,5 +10,15 @@ package vista;
  * @author unalman
  */
 public class PrincipalBanco {
-    
+         public static void main(String[] args) {
+         
+         PrincipalClientes ppalcli = new PrincipalClientes(); //Inicializacion
+         while(true){
+             
+          
+               ppalcli.menu();
+         }
+        
+          
+    }
 }

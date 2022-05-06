@@ -7,55 +7,47 @@ package vista;
 
 import controlador.ControladorClientes;
 import static controlador.ControladorClientes.arregloClientes;
-import java.util.ArrayList;
 import java.util.Scanner;
+import modelo.Cliente;
 
 import modelo.Usuario;
 
 
 /**
  *
- * @author unalman
+ * @author Juan Fernando Zuluaga
  */
 
 public class PrincipalClientes extends Usuario{
     ControladorClientes contrcli;   
+    Scanner sc;
    
-      public static void main(String[] args) {
-        
-          Usuario usuario = new Usuario();
-          
-          System.out.println(usuario);
-    }  
       
       // OJOOOO
       
-    @Override
-    public String toString(){
-        return "";
-        
-        ///PREGUNTAR??
-    }
+   
     public PrincipalClientes() {
-       contrcli = new ControladorClientes();
+       contrcli = new ControladorClientes(); //instancia de clase Inicialiacion
+       sc = new Scanner(System.in); //Intancia de clase Inicializacion
     }
     
     public void leerDatosCliente()
     {
         //Ejercicio deben insertar datos en el arreglo.
-        Scanner sc = new Scanner(System.in);
+        Cliente cli = new Cliente();
         System.out.println("Ingrese el nombre del usuario: ");
-        nombre = sc.nextLine();
+        cli.setNombre(sc.next());
         System.out.println("Ingrese el apellido del usuario: ");
-        apellido = sc.nextLine();
+        cli.setApellido(sc.next());
         System.out.println("Ingrese la direccion del usuario: ");
-        direccion = sc.nextLine();
-        System.out.println("Ingrese el telefono del usuario: ");
-        telefono = sc.nextInt();
+        cli.setDireccion(sc.next());
         System.out.println("Ingrese el correo del usuario: ");
-        correo = sc.nextLine();
+        cli.setCorreo(sc.next());
+        System.out.println("Ingrese el telefono del usuario: ");
+        cli.setTelefono(sc.nextInt());
         System.out.println("Ingrese la cedula del usuario: ");
-        cedula = sc.nextInt();
+        cli.setCedula(sc.nextInt());
+       
 //        ArrayList<String> lista1 = new ArrayList<String>();
 //        lista1.add(nombre);
 //        lista1.add(apellido);
@@ -69,39 +61,127 @@ public class PrincipalClientes extends Usuario{
 //          this.correo = correo;
 //          this.telefono = telefono;
           //contrcli.insertar(this.nombre, this.apellido, this.cedula, this.correo, this.direccion, this.telefono);//porque no sirve llenar el objeto asi?
-          contrcli.insertar(nombre);
-          contrcli.insertar(apellido);
-          contrcli.insertar(cedula);
-          contrcli.insertar(direccion);
-          contrcli.insertar(telefono);
+          //Validacion
+          if (!contrcli.insertar(cli)) {
+              System.out.println("Error en la insertada de datos");
+        }else{
+              System.out.println("Cliente insertado satisfactoriamente");
+          }
           
           
-          return;
-          //PREGUNTAR
-    }    
+//          contrcli.insertar(nombre);
+//          contrcli.insertar(apellido);
+//          contrcli.insertar(cedula);
+//          contrcli.insertar(direccion);
+//          contrcli.insertar(telefono);
+          
+          
+       
+          
+    }   
     
+    public void consultar(){
+        System.out.println("Digite la cedula que desea mostrar");
+        Cliente cli = new Cliente(sc.nextInt());
+        int pos = contrcli.consultarUno(cli);
+        System.out.println(arregloClientes.get(pos).toString());
+    }
+    
+    public void modificarcli(){
+        System.out.println("Digite la cedula del cliente que quiere modificar> ");
+        Cliente cli = new Cliente(sc.nextInt());
+        
+        while (1 > 0)
+        {
+            contrcli.modificar(cli);
+            System.out.println("Desea modificar otro dato del cliente ?");
+            System.out.println("1. Si");
+            System.out.println("2. No");
+            int opc = 2;
+            opc = sc.nextInt();
+            switch(opc)
+            {
+                case 1:
+                    continue;
+                default:
+                    System.out.println("Error en la modificacion del cliente");
+                    break;
+                    
+            }
+            break;
+        }
+    }
+    
+    public void borrarcli(){
+        System.out.println("Digite la cedula del cliente que desea eliminar del sistema");
+        Cliente cli = new Cliente(sc.nextInt());
+        contrcli.borrar(cli);
+    }
+    
+    public void ordenar(){
+        contrcli.ordenarDatos();
+    }
+    
+    
+    
+    public void mostrarTodos(){
+        contrcli.mostrar();
+    }
+    
+    public void ordenarNom(){
+        contrcli.quicksort(0,contrcli.arregloClientes.size()-1);
+    }
+    
+    public void ordenarCed(){
+        contrcli.quicksortcedula(cedula, cedula);
+    }
     
     public void menu()
     {
-        int opc=1;
-        System.out.println("Menu Portal de Clientes");
+        int opc=0;
+        System.out.println("MENU PORTAL CLIENTES");
         System.out.println("1. Insertar");
         System.out.println("2. Consultar");
         System.out.println("3. Modificar");
         System.out.println("4. Borrar");
+        System.out.println("5. Consultar todos los clientes");
+        System.out.println("6. Ordenar clientes por nombre");
+        System.out.println("7. Ordenar clientes por cedula");
+        System.out.println("Ingrese la opcion: ");
+        opc = sc.nextInt();
         switch(opc)
         {
             case 1:
                 leerDatosCliente();
-            default:
-                System.out.println("No se puede insertar usuario");
+            break;
             case 2:
+                consultar();
+            break;
+            case 3:
+                modificarcli();
+            break;
+            case 4:
+                borrarcli();
+            break;
+            case 5:
+                mostrarTodos();
+            break;
+            case 6:
+                ordenarNom();
+            break;
+            case 7:
+                ordenarCed();
+            break;
+            default:
+                System.exit(0);
+                System.out.println("Opcion no valida en este menu");
+            break;
             
                 
         }
         
         
-       return;
+       
      
     }
     

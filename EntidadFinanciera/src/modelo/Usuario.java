@@ -5,17 +5,38 @@
  */
 package modelo;
 
+import java.util.Date;
+
 /**
  *
- * @author unalman
+ * @author Juan Fernando Zuluaga
  */
 public class Usuario {
     protected String nombre;
     protected String apellido;
     protected String direccion;
-    protected int    telefono;
+    protected int   telefono;
     protected String correo;
     protected int    cedula;
+    protected String contrasena;
+    protected Date fechaNacimiento;
+    
+    public Usuario(int cedula, String contrasena){
+        //contructor 
+        //getter
+        
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+  
 
     public Usuario(String nombre, String apellido, String direccion, int telefono, String correo, int cedula) {
         this.nombre = nombre;

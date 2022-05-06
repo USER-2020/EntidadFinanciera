@@ -7,7 +7,7 @@ package controlador;
 
 /**
  *
- * @author unalman
+ * @author Juan Fernando Zuluaga
  */
 /*CRUD
   Create - Insertar o crear datos
@@ -21,8 +21,13 @@ package controlador;
 */
 public interface CRUD {
     public boolean insertar(Object obj);
-    public Object  modificar(Object obj);
-    public boolean borrar(Object obj);
-    public Object consultarUno(Object obj);
+    public void  modificar(Object obj);
+    public void borrar(Object obj);
+    public int consultarUno(Object obj);
+    public void mostrar();
+    public void ordenarDatos();
+    
+    public void quicksort(int izq, int der);
+    public void quicksortcedula(int izq, int der);
     
 }

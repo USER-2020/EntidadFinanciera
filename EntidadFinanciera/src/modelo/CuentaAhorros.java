@@ -7,9 +7,10 @@ package modelo;
 
 /**
  *
- * @author unalman
+ * @author Juan Fernando Zuluaga 
  */
 public class CuentaAhorros {
+    private int cedulaUsuario;
     private String idCuentaAhorros;
     private float saldoCuentaAhorros;
     
