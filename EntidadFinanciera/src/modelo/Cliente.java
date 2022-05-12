@@ -55,6 +55,10 @@ public class Cliente extends Usuario implements Comparable<Cliente>{
    public Cliente (String text, String text0, String text1, int parseInt, String text3, String text4, String text5){
        
    }
+
+    public Cliente(String text, String text0, String text1, int parseInt, String text2, String text3, String text4, String text5) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
    
    
    @Override

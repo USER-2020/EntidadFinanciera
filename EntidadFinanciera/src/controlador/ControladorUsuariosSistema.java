@@ -10,7 +10,7 @@ import modelo.Admin;
  * @author Juan Fernando Zuluaga
  */
 public class ControladorUsuariosSistema {
-    Admin admin = new Admin(123456, "1234");
+    Admin admin = new Admin(1053863921, "1234");
     
     public boolean autenticar(int idusuario, String contrasena){
         System.out.println(idusuario);
